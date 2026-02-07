@@ -13,7 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showMessage(text, type) {
     messageDiv.textContent = text;
-    messageDiv.className = type;
+
+    // Ensure the base message class is always present
+    messageDiv.classList.add("message");
+
+    // Remove any existing status classes before applying the new one
+    messageDiv.classList.remove("success", "error");
+    if (type) {
+      messageDiv.classList.add(type);
+    }
+
+    // Show the message
     messageDiv.classList.remove("hidden");
 
     setTimeout(() => {
