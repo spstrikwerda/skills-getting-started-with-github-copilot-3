@@ -95,18 +95,53 @@ section h3 {
 }
 
 .activity-card .participants-list li {
-  padding: 4px 0 4px 20px;
-  position: relative;
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   font-size: 14px;
   color: #666;
 }
 
-.activity-card .participants-list li::before {
-  content: "•";
-  position: absolute;
-  left: 8px;
-  color: #1a237e;
-  font-weight: bold;
+.activity-card .participant-email {
+  overflow-wrap: anywhere;
+}
+
+.activity-card .delete-participant {
+  border: 1px solid #b71c1c;
+  background-color: #d32f2f;
+  color: #ffffff;
+  height: 26px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.activity-card .delete-participant:hover {
+  background-color: #b71c1c;
+  border-color: #8e0000;
+}
+
+.activity-card .delete-participant:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.activity-card .delete-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 .activity-card .no-participants {
@@ -183,4 +218,111 @@ footer {
   margin-top: 30px;
   padding: 20px;
   color: #666;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 35, 126, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal {
+  width: 100%;
+  max-width: 420px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.modal-header {
+  background-color: #1a237e;
+  color: #ffffff;
+  padding: 16px 20px;
+}
+
+.modal-header h3 {
+  font-size: 18px;
+}
+
+.modal-body {
+  padding: 18px 20px 10px;
+  color: #333;
+}
+
+.modal-details {
+  margin-top: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background-color: #f5f6fb;
+}
+
+.modal-detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+  padding: 4px 0;
+}
+
+.modal-detail-label {
+  color: #1a237e;
+  font-weight: 700;
+}
+
+.modal-detail-value {
+  color: #333;
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+
+.modal-button {
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.modal-button.secondary {
+  background-color: #ffffff;
+  color: #1a237e;
+  border-color: #c5cae9;
+}
+
+.modal-button.secondary:hover {
+  background-color: #e8eaf6;
+}
+
+.modal-button.danger {
+  background-color: #d32f2f;
+  color: #ffffff;
+  border-color: #b71c1c;
+}
+
+.modal-button.danger:hover {
+  background-color: #b71c1c;
+  border-color: #8e0000;
+}
+
+.modal-backdrop.hidden {
+  display: none;
 }

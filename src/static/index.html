@@ -41,6 +41,31 @@
       </section>
     </main>
 
+    <div id="confirm-modal" class="modal-backdrop hidden" aria-hidden="true">
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirm-modal-title">
+        <div class="modal-header">
+          <h3 id="confirm-modal-title">Confirm Removal</h3>
+        </div>
+        <div class="modal-body">
+          <p id="confirm-modal-message">Are you sure you want to remove this participant?</p>
+          <div class="modal-details">
+            <div class="modal-detail-row">
+              <span class="modal-detail-label">Activity</span>
+              <span id="confirm-modal-activity" class="modal-detail-value"></span>
+            </div>
+            <div class="modal-detail-row">
+              <span class="modal-detail-label">Email</span>
+              <span id="confirm-modal-email" class="modal-detail-value"></span>
+            </div>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="confirm-modal-cancel" class="modal-button secondary">Cancel</button>
+          <button type="button" id="confirm-modal-confirm" class="modal-button danger">Remove</button>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <p>&copy; 2023 Mergington High School</p>
     </footer>
